@@ -13,7 +13,24 @@ INC=$(I_LIBFT) $(I_INC)
 
 CFLAGS=-Wall -Wextra -Werror -g $(INC)
 
-SRCS =	main.c
+SRCS =	main.c \
+		ft_init.c \
+		ft_set.c \
+		ft_get.c \
+		ft_inp.c \
+		ft_outp.c \
+		ft_add.c \
+		ft_del.c \
+		ft_del_map.c \
+		ft_algs.c \
+		ft_check1.c \
+		ft_check2.c \
+		ft_comp.c \
+		ft_utils.c \
+		ft_rev.c \
+		ft_rooms.c \
+		ft_path1.c \
+		ft_path2.c
 
 HEADERS =	./lem_in.h
 

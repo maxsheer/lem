@@ -1,23 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   terminate.c                                        :+:      :+:    :+:   */
+/*   ft_del.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 19:30:22 by aromny-w          #+#    #+#             */
-/*   Updated: 2019/12/07 13:40:37 by tlynesse         ###   ########.fr       */
+/*   Created: 2019/12/07 13:19:47 by tlynesse          #+#    #+#             */
+/*   Updated: 2019/12/07 13:20:15 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	terminate(int status)
+void	del_link(t_link **link)
 {
-	if (status == -1)
-		ft_putstr_fd("ERROR\n", 2);
-	if (status != -1)
-		exit(EXIT_SUCCESS);
-	else
-		exit(EXIT_FAILURE);
+	t_link	*tmp;
+	t_link	*next;
+
+	tmp = *link;
+	while (tmp)
+	{
+		next = tmp->next;
+		free(tmp);
+		tmp = next;
+	}
+	*link = NULL;
+}
+
+void	del_rooms(t_room **room)
+{
+	t_room	*tmp;
+	t_room	*next;
+
+	tmp = *room;
+	while (tmp)
+	{
+		next = tmp->next;
+		del_link(&tmp->link);
+		if (tmp->in == 0)
+			free(tmp->name);
+		free(tmp);
+		tmp = next;
+	}
+	*room = NULL;
 }
