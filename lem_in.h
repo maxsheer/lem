@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wclayton <wclayton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/02 20:25:26 by aromny-w          #+#    #+#             */
-/*   Updated: 2019/12/07 14:06:24 by tlynesse         ###   ########.fr       */
+/*   Created: 2019/09/02 20:25:26 by wclayton          #+#    #+#             */
+/*   Updated: 2019/12/07 14:21:42 by wclayton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,6 @@ void			best_path(t_path **new, t_path *tmp, t_map *map);
 void			height_init(t_room **room);
 void			rev_paths(t_path *init, t_path new, size_t k);
 size_t			path_add(t_path *path, t_path new, size_t k);
-int				brakingsystem(t_path *curr, t_path *prev, int k, int ants);
 void			writeinput(t_list *input);
 int				link_di(t_room **src, t_room **dst);
 size_t			namelen(char *line);
